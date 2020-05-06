@@ -25,7 +25,7 @@ from mpl_toolkits.mplot3d import Axes3D
 nozc       = 1.0;                # Nozzle centre
 nozw       = 1.0;                # Nozzle width
 imax       = 80;                 # Number of mesh points in x
-nmax       = 40;                 # Number of mesh points in y
+nmax       = 80;                 # Number of mesh points in y
 k          = 0.05;               # Artificial dissipation parameter
 
 maxl       = 50;                 # maximum grid lines on plots
@@ -123,4 +123,4 @@ ax1.view_init(30, -120)
 #plt.savefig('flame.png',dpi=250)
 plt.show()
 
-print('done')
+print("Done (with a capital)")
