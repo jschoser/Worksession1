@@ -23,10 +23,10 @@ from flameLibP3 import getPsi,getUV,getF,getPerf
 #=========================================================
 # Input parameters
 #=========================================================
-nozc       = -2.0;                # Nozzle centre
-nozw       = 1.0;                # Nozzle width
-imax       = 40;                 # Number of mesh points in i
-nmax       = 80;                 # Number of mesh points in j
+nozc       = 1.51481539e-04;                # Nozzle centre
+nozw       = 1.18807210e+00;                # Nozzle width
+imax       = 160;                 # Number of mesh points in i
+nmax       = 320;                 # Number of mesh points in j
 k          = 0.15;               # Artificial dissipation parameter
 
 maxl       = 50;                 # maximum grid lines on plots
