@@ -129,7 +129,7 @@ def get_flame_perf(vars):
     #=========================================================
     perf = getPerf(imax,nmax,x,y,dx,dy,F)
 
-    return abs(2 - perf)
+    return abs(1 - perf)
 
 
 result = scipy.optimize.fmin(get_flame_perf, [0, 1], ftol=1E-2)
