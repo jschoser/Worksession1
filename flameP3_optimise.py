@@ -1,6 +1,6 @@
 #================================================================= 
 #
-# AE2220-II: Computational Modelling - Koen is amazing
+# AE2220-II: Computational Modelling - Koen is NOT amazing
 # Code for work session 1 - In-class exercise
 #
 #=================================================================
@@ -25,8 +25,8 @@ import scipy.optimize
 # Input parameters
 #=========================================================
 
-imax = 160;  # Number of mesh points in i
-nmax = 320;  # Number of mesh points in j
+imax = 16;  # Number of mesh points in i
+nmax = 32;  # Number of mesh points in j
 
 
 def get_flame_perf(vars):

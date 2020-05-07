@@ -1,7 +1,7 @@
 #================================================================= 
 # Lady Gaga
 # AE2220-II: Computational Modelling 
-# Code for work session 1 - Preparation
+# Code for work session 1 - Preparation !!!!!!!Pianka
 #
 #=================================================================
 # This code provides a base for computing the advection 
