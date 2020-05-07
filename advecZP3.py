@@ -22,10 +22,10 @@ from mpl_toolkits.mplot3d import Axes3D
 #=========================================================
 # Input parameters
 #=========================================================
-nozc       = 1.0;                # Nozzle centre
+nozc       = 0.0;                # Nozzle centre
 nozw       = 1.0;                # Nozzle width
-imax       = 80;                 # Number of mesh points in x
-nmax       = 80;                 # Number of mesh points in y
+imax       = 135;                 # Number of mesh points in x
+nmax       = 80;                 # Number of mesh points in y #nmax roughly larger than imax/2
 k          = 0.05;               # Artificial dissipation parameter
 
 maxl       = 50;                 # maximum grid lines on plots
@@ -120,7 +120,7 @@ ax1.plot_surface(x, y, Z, shade=True, rstride=stride,cstride=stride,
 cmap=plt.cm.gnuplot, linewidth=0, antialiased=True);
 
 ax1.view_init(30, -120)
-#plt.savefig('flame.png',dpi=250)
+# plt.savefig('flame.png',dpi=250)
 plt.show()
 
 print("Done (with a capital)")
