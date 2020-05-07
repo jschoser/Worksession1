@@ -23,7 +23,7 @@ from flameLibP3 import getPsi,getUV,getF,getPerf
 #=========================================================
 # Input parameters
 #=========================================================
-nozc       = 0.0;                # Nozzle centre
+nozc       = -2.0;                # Nozzle centre
 nozw       = 1.0;                # Nozzle width
 imax       = 40;                 # Number of mesh points in i
 nmax       = 80;                 # Number of mesh points in j
@@ -99,7 +99,7 @@ for n in range(0, nmax-1):   # March upwards from y=0 to y=10
    # Since u<0 on the left boundary a (first-order) numerical condition
    # should be implemented. Finish the line and uncomment it
    # (Do not add an artificial dissipation operator)
-#  Z[0,n+1] = Z[0,n] 
+   Z[0,n+1] = Z[0,n] + dy/v[0,n] * (F[0,n] - u[0,n]/dx * (Z[1,n] - Z[0,n]))
 
   
    # Update interior (nodes i=1 to imax-2) 
@@ -114,7 +114,7 @@ for n in range(0, nmax-1):   # March upwards from y=0 to y=10
    # Since u>0 on the right boundary a (first-order) numerical condition
    # should be implemented. Finish the line and uncomment it.
    # (Do not add an artificial dissipation operator)
-#  Z[imax-1,n+1] =  Z[imax-1,n] \
+   Z[imax-1,n+1] = Z[imax-1,n] + dy/v[imax-1,n] * (F[imax-1,n] - u[imax-1,n]/dx * (Z[imax-1,n] - Z[imax-2,n]))
                 
 
 
