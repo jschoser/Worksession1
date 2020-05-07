@@ -1,6 +1,6 @@
 #================================================================= 
 #
-# AE2220-II: Computational Modelling - Koen is amazing
+# AE2220-II: Computational Modelling - Koen is NOT amazing
 # Code for work session 1 - In-class exercise
 #
 #=================================================================
