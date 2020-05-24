@@ -20,7 +20,7 @@ import TriFEMLibGPrep
 #=========================================================
 # Input parameters
 #=========================================================
-n=1            # Mesh refinement factor
+n=8            # Mesh refinement factor
 a=1.           # Manufactured solution a
 b=1.           # Manufactured solution b
 
@@ -90,7 +90,7 @@ for elemIndex in range(mesh.nElem):
 
     # Compute the local value of the source term, f
     # ***** For the manufactured solution, add the appropriate value below
-    fIP = 0.
+    fIP = -np.sin(a * xIP) * np.sin(b * yIP) * (a ** 2 + b ** 2)
 
 
     # Retrieve the gradients evaluated at this integration point
@@ -110,7 +110,8 @@ for elemIndex in range(mesh.nElem):
       elemVec[i] += ipWeight*psi[i]*fIP;   # Right-hand side of weak form
       for j in range(evDim):
         # ***** Change the line below for the desired left-hand side
-        elemMat[i,j] += -ipWeight*psi[i]*psi[j]
+        # elemMat[i,j] += -ipWeight*psi[i]*psi[j]
+        elemMat[i, j] += -ipWeight * (gradPsi[i][0] * gradPsi[j][0] + gradPsi[i][1] * gradPsi[j][1])
 
   
   #----------------------------------------------------------------
