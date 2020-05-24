@@ -18,8 +18,7 @@
 import math
 import numpy as np
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
-from flameLibP3 import getPsi,getUV,getF,getPerf
+from WS1.flameLibP3 import getPsi,getUV,getF,getPerf
 
 #=========================================================
 # Input parameters
