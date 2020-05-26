@@ -20,7 +20,7 @@ import TriFEMLibGF
 #=========================================================
 # Input parameters
 #=========================================================
-n=1                 # Mesh refinement factor
+n=4                 # Mesh refinement factor
 a=0.5               # ice thickness amplitude
 b=1.0               # Displacement of minimum from zero
 
@@ -122,7 +122,8 @@ for elemIndex in range(mesh.nElem):
       elemVec[i] += ipWeight*psi[i]*fIP;   # Right-hand side of weak form
       for j in range(evDim):
         # ***** Change the line below for the desired left-hand side
-        elemMat[i,j] += 1.
+        # elemMat[i,j] += 1.
+        elemMat[i, j] += - ipWeight * (gradPsi[i][0] * gradPsi[j][0] + gradPsi[i][1] * gradPsi[j][1])
 
   
   #----------------------------------------------------------------
