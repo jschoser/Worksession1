@@ -20,9 +20,9 @@ import TriFEMLibGF
 #=========================================================
 # Input parameters
 #=========================================================
-n=4                 # Mesh refinement factor
-a=0.5               # ice thickness amplitude
-b=1.0               # Displacement of minimum from zero
+n=10                 # Mesh refinement factor
+a=0.73885733               # ice thickness amplitude
+b=2.93265879               # Displacement of minimum from zero
 
 #=========================================================
 # Fixed parameters
