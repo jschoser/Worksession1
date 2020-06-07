@@ -20,12 +20,12 @@ import TriFEMLibGF
 #=========================================================
 # Input parameters
 #=========================================================
-n=10                 # Mesh refinement factor
-a=0.73885733               # ice thickness amplitude
-b=2.93265879               # Displacement of minimum from zero
+n = 10                      # Mesh refinement factor
+a = 0.73885733              # ice thickness amplitude
+b = 2.93265879              # Displacement of minimum from zero
 
 #=========================================================
-# Fixed parameters
+# Fixed parameters n=6, xtol=0.001, ftol=0.001 [0.73885733 2.93265879]
 #=========================================================
 xmQ,ymQ =-10, 10.5     # Position of satellite Q
 xmS,ymS = 10, 9.39     # Position of satellite S
@@ -125,7 +125,6 @@ for elemIndex in range(mesh.nElem):
         # elemMat[i,j] += 1.
         elemMat[i, j] += - ipWeight * (gradPsi[i][0] * gradPsi[j][0] + gradPsi[i][1] * gradPsi[j][1])
 
-  
   #----------------------------------------------------------------
   # Add the completed element matrix and vector to the system
   #----------------------------------------------------------------

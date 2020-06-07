@@ -18,12 +18,12 @@ import matplotlib.pyplot as plt
 import TriFEMLibGF
 from scipy.optimize import fmin
 
-
+0
 def find_dev(vars):
   #=========================================================
   # Input parameters
   #=========================================================
-  n=8                 # Mesh refinement factor
+  n=4                # Mesh refinement factor
   a=vars[0]              # ice thickness amplitude
   b=vars[1]               # Displacement of minimum from zero
 
@@ -41,7 +41,7 @@ def find_dev(vars):
   #=========================================================
   mesh = TriFEMLibGF.TriMesh();
   mesh.loadMesh(n, yIce, a, b)
-  #print ("Mesh: nVert=",mesh.nVert,"nElem=",mesh.nElem);
+  # print ("Mesh: nVert=",mesh.nVert,"nElem=",mesh.nElem);
   #mesh.plotMesh();# quit(); 1
 
   #=========================================================
@@ -63,7 +63,7 @@ def find_dev(vars):
   #=========================================================
   # Assemble the global left-hand matrix and
   # right-hand vector by looping over the elements
-  #print ("Assembling system of dimension",sysDim)
+  print ("Assembling system of dimension",sysDim)
   #=========================================================
 
   for elemIndex in range(mesh.nElem):
@@ -136,7 +136,7 @@ def find_dev(vars):
     fes.addElemVec(elemIndex, elemVec, RHV )
 
   #=========================================================
-  #print ("Applying boundary conditions")
+  print ("Applying boundary conditions")
   #=========================================================
   # Lower boundary conditions
   #=========================================================
@@ -149,7 +149,7 @@ def find_dev(vars):
 
 
   #=========================================================
-  #print ("Solving the system")
+  print ("Solving the system")
   #=========================================================
   #fes.printMatVec(LHM,RHV,"afterConstraints")
   solVec = np.linalg.solve(LHM, RHV)
@@ -164,6 +164,7 @@ def find_dev(vars):
   return math.sqrt( (umQ-urQ)*(umQ-urQ) + (umS-urS)*(umS-urS) )
 
 
-initial = [0.73872975, 2.93201468]
-result = fmin(find_dev, initial)
+initial =  [0.73872975, 2.93201468]
+print()
+result = fmin(find_dev, initial, xtol = 0.1, ftol = 0.1)
 print(result)
