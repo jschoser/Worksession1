@@ -14,21 +14,22 @@ import matplotlib.gridspec as gridspec
 #------------------------------------------------------
 # Input parameters
 #------------------------------------------------------
-nx    = 20;   # Number of mesh points (must be even)
-alpha = 0.4;  # Courant number
-kdt   = 0.05; # Artificial viscosity parameter * Delta t
-g1    = 0;    # LSRK : gamma 1
-g2    = 0;    # LSRK : gamma 2
-g3    = 0;    # LSRK : gamma 3
-g4    = 0;    # LSRK : gamma 4
+nx    = 100;   # Number of mesh points (must be even)
+alpha = 0.8;  # Courant number
+kdt   = 0.04; # Artificial viscosity parameter * Delta t
+g1    = 1;    # LSRK : gamma 1
+g2    = 1;    # LSRK : gamma 2
+g3    = 0.5;    # LSRK : gamma 3
+g4    = 1;    # LSRK : gamma 4
 
 #------------------------------------------------------
 # Function for the lambda-sigma relation
 #------------------------------------------------------
 def lamSig(ldt):
-   sigma = 1 + ldt;               # Euler explicit time march
-  #sigma = 1/(1- ldt);            # Euler implicit time march
-  #sigma = (1+ldt/2)/(1- ldt/2)   # Trapezoidal time march
+   # sigma = 1 + ldt;               # Euler explicit time march
+   # sigma = 1/(1- ldt);            # Euler implicit time march
+   # sigma = (1+ldt/2)/(1- ldt/2)   # Trapezoidal time march
+   sigma = 1 + g4*(ldt) + g3*g4*(ldt)**2 + g2*g3*g4*(ldt)**3 + g1*g2*g3*g4*(ldt)**4
    return sigma
 
 #------------------------------------------------------
