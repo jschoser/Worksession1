@@ -11,12 +11,12 @@ import matplotlib.animation as pltani
 #------------------------------------------------------
 # Input parameters
 #------------------------------------------------------
-nx         = 100;         # number of mesh points (min 50)
+nx         = 1000;         # number of mesh points (min 50)
 alpha      = 0.8;         # c delta t / delta x
 kdt        = 0.04;        # Artificial diffusion*dt*dx*dx
-glsrk      = np.array([1.0, 0.0, 0.5, 1]) # g1, g2, g3, g4 for LSRK
-c_pse      = 1.00;        # Controller phase lead
-c_amp      = -0.10;       # Controller amplitude
+glsrk      = np.array([1.0, -0.27159831, 0.5, 1]) # g1, g2, g3, g4 for LSRK
+c_pse = 0.7292282756505188
+c_amp = -0.2707086185437866
 
 #------------------------------------------------------
 # Fixed parameters
